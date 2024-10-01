@@ -34,7 +34,7 @@ module Jekyll
       end
 
       def site_title
-        active_lang = site["active_lang"] || "default_lang"
+        active_lang = site["active_lang"] || site["default_lang"]
         @site_title ||= format_string(site["title"][active_lang] || site["name"])
       end
 
@@ -43,7 +43,8 @@ module Jekyll
       end
 
       def site_description
-        @site_description ||= format_string site["description"]
+        active_lang = site["active_lang"] || site["default_lang"]
+        @site_description ||= format_string site["description"][active_lang] || site["description"]
       end
 
       # Page title without site title or description appended
