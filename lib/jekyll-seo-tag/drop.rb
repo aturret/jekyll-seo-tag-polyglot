@@ -35,7 +35,7 @@ module Jekyll
 
       def site_title
         active_lang = site["active_lang"] || site["default_lang"]
-        @site_title ||= format_string(site["name"] || site["title"][active_lang])
+        @site_title ||= format_string(site["seo-title"] || site["title"][active_lang])
       end
 
       def site_tagline
