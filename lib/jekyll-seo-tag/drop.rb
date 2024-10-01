@@ -163,7 +163,7 @@ module Jekyll
       end
 
       def page_lang
-        @page_lang ||= page["lang"] || site["lang"] || "en_US"
+        @page_lang ||= page["lang"] || site["active_lang"] || "en_US"
       end
 
       def page_locale
